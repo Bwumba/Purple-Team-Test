@@ -1,1 +1,3 @@
-powershell.exe -windowstyle hidden -noprofile -executionpolicy bypass -command whoami priv & get-localuser & get-netipaddress & exit
+whoami /priv
+get-localuser
+get-netipaddress

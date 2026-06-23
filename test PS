@@ -3,4 +3,5 @@ get-localuser
 get-netipaddress
 $searcher = New-Object System.DirectoryServices.DirectorySearcher
 $searcher.Filter = "(objectClass=*)"
+$searcher.PageSize = 30
 $searcher.FindAll()

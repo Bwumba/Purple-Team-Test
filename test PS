@@ -8,6 +8,14 @@ $results = $searcher.FindAll()
 
 $results |
     ForEach-Object {
-        $_.Properties
+        $props = $_.Properties
+        $obj = New-Object PSObject
+
+        foreach ($key in $props.Keys) {
+           $value = ($props[$key] -join ";")
+           $obj | Add-Member -NotePropertyName $key -NotePropertyName $value
+        }
+
+
     }  |
     Export-Csv  -NoTypeInformation -Path $env:temp\export.csv

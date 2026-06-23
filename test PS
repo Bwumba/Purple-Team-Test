@@ -18,3 +18,18 @@ $results |
 
        $obj
    } | Export-Csv  -NoTypeInformation -Path $env:temp\export.csv
+
+$smtpServer = ""
+$from =""
+$to = ""
+
+$smtp = New-Object Net.Mail.SmtpClient($smtpServer)
+$msg = New-Object Net.Mail.MailMessage
+$msg.From = $from
+$msg.To.Add($to)
+$msg.Subject = "Purple Team Export"
+$msg.Body = "Purple Team Test Export"
+$msg.Attachments.Add("$env:temp\export.csv")
+
+
+$smtp.Send($msg)

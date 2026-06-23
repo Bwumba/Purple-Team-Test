@@ -13,7 +13,7 @@ $results |
 
         foreach ($key in $props.Keys) {
            $value = ($props[$key] -join ";")
-           $obj | Add-Member -NotePropertyName $key -NotePropertyName $value
+           $obj | Add-Member -NotePropertyName $key -NotePropertyValue $value
         }
 
        $obj

@@ -16,6 +16,5 @@ $results |
            $obj | Add-Member -NotePropertyName $key -NotePropertyName $value
         }
 
-
-    }  |
-    Export-Csv  -NoTypeInformation -Path $env:temp\export.csv
+       $obj
+   } | Export-Csv  -NoTypeInformation -Path $env:temp\export.csv

